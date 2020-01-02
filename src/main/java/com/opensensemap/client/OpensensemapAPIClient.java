@@ -26,7 +26,6 @@ public class OpensensemapAPIClient {
 	public List<Measurement> getMeasurements() {
 		ParameterizedTypeReference<List<Measurement>> parameterizedTypeReference = new ParameterizedTypeReference<List<Measurement>>() {
 		};
-		System.out.println(measurementURL);
 		ResponseEntity<List<Measurement>> measurements = this.restTemplate.exchange(measurementURL, HttpMethod.GET,
 				null, parameterizedTypeReference);
 		return measurements.getBody();
